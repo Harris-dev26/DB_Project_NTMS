@@ -6,10 +6,10 @@ last_name=""
 sex=""
 email_address=""
 password=""
-def action_login(request):
+def action_sign_up(request):
     global first_name,last_name,sex,email_address,password
     if request.method=="POST":
-        m=sql.connect(host="localhost",user="root",passwd="vivek",database='website')
+        m=sql.connect(host="localhost",user="root",passwd="taleef786",database='website')
         cursor=m.cursor()
         d=request.POST
         for key,value in d.items():
@@ -24,7 +24,7 @@ def action_login(request):
             if key=="password":
                 password=value
         
-        c="insert into users Values('{}','{}','{}','{}','{}')".format(first_name,last_name,sex,email_address,password)
+        c="insert into user Values('{}','{}','{}','{}','{}')".format(first_name,last_name,sex,email_address,password)
         cursor.execute(c)
         m.commit()
     return render(request,'signup_page.html')
