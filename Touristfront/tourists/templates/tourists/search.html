@@ -1,0 +1,34 @@
+{% extends 'tourists/base.html' %}
+
+{% block content %}
+
+    <center> 
+        
+        {% if searched %}
+
+            <h1>you searched for {{ searched }}</h1>
+
+            <br>
+
+            {% for name in result %}
+
+                <a> {{ name }} </a>  
+
+                <td>
+                    <a href= "{% url 'update' %}"> Update Passwords </a>
+                </td>
+
+                <br>
+
+            {% endfor %}
+
+
+        {% else %}
+
+            <h1> you didnt search </h1>
+
+        {% endif %}
+        
+    </center>
+
+{% endblock %}
