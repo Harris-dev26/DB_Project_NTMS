@@ -1,0 +1,29 @@
+{% extends 'tourists/base_tourist.html' %}
+
+{% block content %}
+
+    
+        <h1>Hotel list</h1>
+        
+        {% for POI in Hotel_list %}
+        <strong>Review given by: {{ POI.0 }}</strong>
+        
+        <ul> 
+
+        
+        <li>Rating given: {{ POI.1 }}</li>
+        <li>Review given: {{ POI.2 }}</li>
+        <li>Hotel name: {{ POI.3 }}</li>
+        <li>Location: {{ POI.4 }}</li>
+        
+       
+        
+        </ul>
+
+        <br>
+
+        {% endfor %}
+
+         
+
+{% endblock %}

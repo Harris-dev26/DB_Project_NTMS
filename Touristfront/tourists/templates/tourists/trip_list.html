@@ -1,0 +1,38 @@
+{% extends 'tourists/base_tourist.html' %}
+
+{% block content %}
+
+    
+        <h1>trip list</h1>
+        
+        {% for POI in trip_list %}
+        <strong>Trip by {{ POI.0 }}</strong>
+        
+        <ul> 
+
+        
+        <li> Trip is for : {{ POI.0}}</li>
+        <li> First POI : {{ POI.1 }}</li>
+        <li> Second POI : {{ POI.2 }}</li>
+        <li> Third POI : {{ POI.3 }}</li>
+        <li> First Hotel : {{ POI.4 }}</li>
+        <li> Second Hotel : {{ POI.5 }}</li>
+     
+         
+        {% for locations in POI.Choose_Hotel.all %}
+                 
+        <li> Hotel : {{ locations.name }}</li>
+       
+        {% endfor %}
+        
+        
+
+        </ul>
+
+        <br>
+
+        {% endfor %}
+
+         
+
+{% endblock %}

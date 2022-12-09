@@ -1,0 +1,43 @@
+{% extends 'tourists/base_tourist.html' %}
+
+{% block content %}
+
+    
+        <h1>Hotel Comparison</h1>
+        
+         
+        <strong> Hotel 1: </strong>
+
+        <ul> 
+
+        <li> Name : {{ first.1 }}</li>
+        <li> Location : {{ first.2 }}</li>
+        <li> Available rooms : {{ first.3 }}</li>
+        <li> Details : {{ first.4 }}</li>
+        <li> Budget Package : {{ first.5 }}</li>
+        <li> Normal Package : {{ first.6 }}</li>
+        <li> Premium Package : {{ first.7 }}</li>
+
+
+        </ul>
+
+         
+        <strong> Hotel 2: </strong>
+
+
+        <ul> 
+
+        <li> Name : {{ second.1 }}</li>
+        <li> Location : {{ second.2 }}</li>
+        <li> Available rooms : {{ second.3 }}</li>
+        <li> Details : {{ second.4 }}</li>
+        <li> Budget Package : {{ second.5 }}</li>
+        <li> Normal Package : {{ second.6 }}</li>
+        <li> Premium Package : {{ second.7 }}</li>
+
+  
+        </ul>
+
+        <br>
+ 
+{% endblock %}
