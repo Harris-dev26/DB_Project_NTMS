@@ -1,43 +1,106 @@
-{% extends 'tourists/base_tourist.html' %}
+{% extends 'tourists/base_tourist.html' %} {% block content %}
 
-{% block content %}
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
 
-    
-        <h1>Hotel Comparison</h1>
-        
-         
-        <strong> Hotel 1: </strong>
+    body {
+        box-sizing: border-box;
+        font-family: "Roboto", sans-serif;
+        font-size: 16px;
+        scroll-behavior: smooth;
+    }
 
-        <ul> 
+    a {
+        text-transform: uppercase;
+    }
 
-        <li> Name : {{ first.1 }}</li>
-        <li> Location : {{ first.2 }}</li>
-        <li> Available rooms : {{ first.3 }}</li>
-        <li> Details : {{ first.4 }}</li>
-        <li> Budget Package : {{ first.5 }}</li>
-        <li> Normal Package : {{ first.6 }}</li>
-        <li> Premium Package : {{ first.7 }}</li>
+    a:is(:hover, :focus-within) {
+        opacity: 0.7;
+    }
 
+    img {
+        max-width: 100%;
+    }
+    .home_container {
+        width: 50%;
+    }
+    .text-para {
+        font-size: 1em;
+    }
+    .comparison {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .btn-flex {
+        display: flex;
+        gap: 1em;
+        justify-content: center;
+        align-items: center;
+    }
+    .btn-flex-btn {
+        padding: 1em;
+        border-radius: 100vmax;
+        color: white;
+        background-color: #439A97;
+    }
+    .btn-flex-btn:hover {
+        color: #439A97;
+        background-color: white;
+    }
+    .heading_color{
+        color: #439A97;
+    }
+    .hotels_compare{
+        display: flex;
+        gap: 1em;
+        padding: 3em;
+    }
+    .ind_hotels_compare{
+        padding: 3em;
+        border: 2px solid #439A97;
+        border-radius: 5px;
+        text-align: center;
+    }
+    .ind_hotels_compare > ul{
+        margin-top: 5px;
+        list-style: none;
+        text-align: justify;
+    }
+</style>
 
+<div class="comparison">
+    <h1 class="heading_color">Hotel Comparison</h1>
+
+    <div class="hotels_compare">
+        <div class="ind_hotels_compare">
+            <strong class="heading_color">Hotel 1</strong>
+        <ul>
+            <li><strong> Name : </strong> {{ first.1 }}</li>
+            <li><strong> Location : </strong> {{ first.2 }}</li>
+            <li><strong> Available rooms : </strong> {{ first.3 }}</li>
+            <li><strong> Details : </strong> {{ first.4 }}</li>
+            <li><strong> Budget Package : </strong> {{ first.5 }}</li>
+            <li><strong> Normal Package : </strong> {{ first.6 }}</li>
+            <li><strong> Premium Package : </strong> {{ first.7 }}</li>
         </ul>
-
-         
-        <strong> Hotel 2: </strong>
-
-
-        <ul> 
-
-        <li> Name : {{ second.1 }}</li>
-        <li> Location : {{ second.2 }}</li>
-        <li> Available rooms : {{ second.3 }}</li>
-        <li> Details : {{ second.4 }}</li>
-        <li> Budget Package : {{ second.5 }}</li>
-        <li> Normal Package : {{ second.6 }}</li>
-        <li> Premium Package : {{ second.7 }}</li>
-
-  
+        </div>
+        <div class="ind_hotels_compare">
+            <strong class="heading_color">Hotel 2</strong>
+        <ul>
+            <li><strong> Name : </strong> {{ second.1 }}</li>
+            <li><strong> Location </strong> : {{ second.2 }}</li>
+            <li><strong> Available rooms : </strong> {{ second.3 }}</li>
+            <li><strong> Details : </strong> {{ second.4 }}</li>
+            <li><strong> Budget Package : </strong> {{ second.5 }}</li>
+            <li><strong> Normal Package : </strong> {{ second.6 }}</li>
+            <li><strong> Premium Package : </strong> {{ second.7 }}</li>
         </ul>
-
-        <br>
- 
+        </div>
+    </div>
+</div>
 {% endblock %}

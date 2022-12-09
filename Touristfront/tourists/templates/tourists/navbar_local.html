@@ -1,6 +1,36 @@
-<nav class="navbar navbar-expand-lg bg-light">
+<style>
+  .my_navbar {
+      background-color: #439A97 !important;
+  }
+  .my_links {
+      color: white !important;
+  }
+  .my_search {
+      background-color: #CBEDD5;
+  }
+  .my_search:hover {
+      background-color: white;
+  }
+  .my_search_btn {
+      padding: 0.5em;
+      color: #439A97;
+      background-color: white;
+  }
+  .my_search_btn:hover {
+      background-color: #251749;
+      color: white;
+  }
+  .search_btn_gap{
+    margin-right: 15px;
+  }
+  .my_dropdown_links{
+    color: #439A97;
+  }
+</style>
+
+<nav class="my_navbar navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="{% url 'home_local' %}">Tourist website</a>
+      <a class="my_links navbar-brand" href="{% url 'home_local' %}">Tourist website</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -12,23 +42,23 @@
 
            
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'local' %}">Local Data addition</a>
+            <a class="my_links nav-link" href="{% url 'local' %}">Local Data addition</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'list-POI' %}">View POI Ratings </a>
+            <a class="my_links nav-link" href="{% url 'list-POI' %}">View POI Ratings </a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'POIadd_' %}">POI_addition</a>
+            <a class="my_links nav-link" href="{% url 'POIadd_' %}">POI_addition</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'POIrating_' %}">POI_rating</a>
+            <a class="my_links nav-link" href="{% url 'POIrating_' %}">POI_rating</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+            <a class="my_links nav-link" href="{% url 'logout' %}">Logout</a>
           </li>
 
            
@@ -37,11 +67,11 @@
           {% else %}
 
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'register_user' %}">Register</a>
+            <a class="my_links nav-link" href="{% url 'register_user' %}">Register</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'login' %}">Login</a>
+            <a class="my_links nav-link" href="{% url 'login' %}">Login</a>
           </li>
           {% endif %}
            
@@ -56,8 +86,8 @@
           
             {% csrf_token %}
 
-            <input class="form-control me-2" type="search" placeholder="Search hotels" aria-label="Search" name= "searched">
-            <button class="btn btn-outline-secondary" type="submit">Search</button>
+            <input class="my_search form-control me-2" type="search" placeholder="Search hotels" aria-label="Search" name= "searched">
+            <button class="my_search_btn search_btn_gap btn btn-outline-secondary" type="submit">Search</button>
             
           </form>
 
@@ -67,8 +97,8 @@
           
             {% csrf_token %}
 
-            <input class="form-control me-2" type="search" placeholder="Search POI's" aria-label="Search" name= "searched">
-            <button class="btn btn-outline-secondary" type="submit">Search</button>
+            <input class="my_search form-control me-2" type="search" placeholder="Search POI's" aria-label="Search" name= "searched">
+            <button class="my_search_btn btn btn-outline-secondary" type="submit">Search</button>
             
           </form>
 

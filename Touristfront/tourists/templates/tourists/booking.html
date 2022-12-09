@@ -2,30 +2,29 @@
 
 
 {% block content %}
+<style>
+  .btn-flex-btn {
+      padding: 1em;
+      border-radius: 100vmax;
+      color: white;
+      background-color: #439A97;
+  }
+  .btn-flex-btn:hover {
+      color: #439A97;
+      background-color: white;
+  }
+</style>
   <center>
-
   <h1>Book a hotel</h1>
-  <br></br>
-
+  <br>
   {% if submitted %}
-  
     Your booking was made
-
   {% else %}
-
-   
-  
     <form action = "" method= POST >
-      
       {% csrf_token %}
-
       {{ form.as_p }}
-
-      <input type ="submit" value="Submit" class="btn btn-secondary">
-    
+      <input type ="submit" value="Submit" class="btn-flex-btn btn btn-secondary">
     </form>
-   
-
   {% endif %}
 
 

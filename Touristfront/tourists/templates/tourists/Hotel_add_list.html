@@ -1,31 +1,75 @@
-{% extends 'tourists/base_tourist.html' %}
+{% extends 'tourists/base_tourist.html' %} {% block content %}
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
 
-{% block content %}
+    body {
+        box-sizing: border-box;
+        font-family: "Roboto", sans-serif;
+        font-size: 16px;
+        scroll-behavior: smooth;
+    }
 
-    
-        <h1>Hotel Availability list</h1>
-        
-        {% for POI in Hotel_list %}
-        <strong>Hotel: {{ POI.0 }}</strong>
-        
-        <ul> 
+    a {
+        text-transform: uppercase;
+    }
 
-        
-        <li>Location : {{ POI.1 }}</li>
-        <li>Rooms available : {{ POI.2 }}</li>
-        <li>Details: {{ POI.3 }}</li>
-        <li>Available for booking : {{avail}} </li>
+    a:is(:hover, :focus-within) {
+        opacity: 0.7;
+    }
 
- 
-        
-     
-        
+    img {
+        max-width: 100%;
+    }
+    .home_container {
+        width: 80%;
+    }
+    .text-para {
+        font-size: 1em;
+    }
+    .comparison {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .hotel_avail {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 1em;
+    }
+    .heading_color {
+        color: #439A97;
+    }
+    .hotel_ind{
+        border: 2px solid #439A97;
+        border-radius: 5px;
+        padding: 2em;
+        text-align: center;
+        width: 80%;
+    }
+    .hotel_list{
+        list-style: none;
+        text-align: justify;
+    }
+</style>
+
+<div class="hotel_avail">
+    <h1 class="heading_color">Hotel Availability list</h1>
+    {% for POI in Hotel_list %}
+    <div class="hotel_ind">
+        <strong class="heading_color">Hotel: {{ POI.0 }}</strong>
+        <ul class="hotel_list">
+            <li><strong>Location : </strong>{{ POI.1 }}</li>
+            <li><strong>Rooms available : </strong>{{ POI.2 }}</li>
+            <li><strong>Available for booking : </strong>{{avail}}</li>
+            <li><strong>Details: </strong>{{ POI.3 }}</li>
         </ul>
-
-        <br>
-
-        {% endfor %}
-
-         
-
+    </div>
+    {% endfor %}
+</div>
 {% endblock %}
