@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'tourists',
     'members',
+    'django_seed',
 ]
 
 MIDDLEWARE = [

@@ -42,7 +42,7 @@ def update(request):
 
 def POI_list(request):
     cursor = connection.cursor()
-    query = f'Select Local_Name,Rating,Review,POI_name,location from tourists_poi_rating,tourists_poi_rating_choose_poi,tourists_poi_add where tourists_poi_add.id = tourists_poi_rating_choose_poi.poi_add_id and tourists_poi_rating_choose_poi.poi_rating_id = tourists_poi_rating.id'
+    query = f'Select Name,Rating,Review,POI_name,location from tourists_poi_rating,tourists_poi_rating_choose_poi,tourists_poi_add where tourists_poi_add.id = tourists_poi_rating_choose_poi.poi_add_id and tourists_poi_rating_choose_poi.poi_rating_id = tourists_poi_rating.id'
     cursor.execute(query)
 
     return render(request,'tourists/POI_list.html',{'POI_list':cursor})
@@ -65,6 +65,8 @@ def Booking_view(request):
 def Hotel_comp(request):
     
     submitted = False 
+    first = ()
+    second = ()
 
     if request.method == "POST":
 
@@ -100,7 +102,7 @@ def Hotel_comp(request):
 
 def Hotel_list(request):
     cursor = connection.cursor()
-    query = f'Select Local_Name,Rating,Review,name,location from tourists_hotel_rating,tourists_hotel_rating_choose_hotel,tourists_hotel_add where tourists_hotel_add.id = tourists_hotel_rating_choose_hotel.hotel_add_id and tourists_hotel_rating_choose_hotel.hotel_rating_id = tourists_hotel_rating.id'
+    query = f'Select tourists_hotel_rating.Name,Rating,Review,tourists_hotel_add.name,location from tourists_hotel_rating,tourists_hotel_rating_choose_hotel,tourists_hotel_add where tourists_hotel_add.id = tourists_hotel_rating_choose_hotel.hotel_add_id and tourists_hotel_rating_choose_hotel.hotel_rating_id = tourists_hotel_rating.id'
     cursor.execute(query)
  
     return render(request,'tourists/Hotel_list.html',{'Hotel_list':cursor})
@@ -279,7 +281,7 @@ def POIrating_(request):
         form = POIrating(request.POST)
 
         if form.is_valid():
-            Name = form.cleaned_data.get("Local_Name")
+            Name = form.cleaned_data.get("Name")
             Rating = form.cleaned_data.get("Rating")
             Review = form.cleaned_data.get("Review")
             POI = form.cleaned_data.get("Choose_POI")
@@ -290,7 +292,7 @@ def POIrating_(request):
         rating_id = 0
 
         cursor = connection.cursor()
-        cursor.execute("INSERT INTO tourists_poi_rating (Local_Name,Rating,Review) VALUES (%s,%s,%s)",[Name,Rating,Review])
+        cursor.execute("INSERT INTO tourists_poi_rating (Name,Rating,Review) VALUES (%s,%s,%s)",[Name,Rating,Review])
         cursor.execute("Select id FROM tourists_poi_add WHERE POI_name = (%s)",[POI[0]])
 
         for i in cursor:
@@ -386,7 +388,7 @@ def Hotelrating_(request):
         form = Hotelrating(request.POST)
         
         if form.is_valid():
-            Name = form.cleaned_data.get("Local_Name")
+            Name = form.cleaned_data.get("Name")
             Rating = form.cleaned_data.get("Rating")
             Review = form.cleaned_data.get("Review")
             hotel = form.cleaned_data.get("Choose_Hotel")
@@ -397,7 +399,7 @@ def Hotelrating_(request):
         rating_id = 0
 
         cursor = connection.cursor()
-        cursor.execute("INSERT INTO tourists_hotel_rating (Local_Name,Rating,Review) VALUES (%s,%s,%s)",[Name,Rating,Review])
+        cursor.execute("INSERT INTO tourists_hotel_rating (Name,Rating,Review) VALUES (%s,%s,%s)",[Name,Rating,Review])
         cursor.execute("Select id FROM tourists_hotel_add WHERE name = (%s)",[hotel[0]])
 
         for i in cursor:
