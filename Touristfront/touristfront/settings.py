@@ -89,10 +89,10 @@ DATABASES = {
     
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'tourist_front',
-        'USER': 'root',
-        'PASSWORD': 'qwertyuiop',
-        'HOST': 'localhost',
+        'NAME': 'HarisAsghar909$tourist_front',
+        'USER': 'HarisAsghar909',
+        'PASSWORD': 'admin123!',
+        'HOST': 'HarisAsghar909.mysql.pythonanywhere-services.com',
         'PORT': '3306',
     }
 }
