@@ -90,7 +90,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'tourist_front',
         'USER': 'root',
-        'PASSWORD': 'admin',
+        'PASSWORD': 'qwertyuiop',
         'HOST': 'localhost',
         'PORT': '3306',
     }

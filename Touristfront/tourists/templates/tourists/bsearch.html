@@ -1,0 +1,17 @@
+{% extends 'tourists/base.html' %}
+
+{% block content %}
+
+    <center> 
+        {% if searched %}
+            <h1>you searched for {{ searched }}</h1>
+            <br>
+            {% for name in result %}
+                <a> Booking: {{ name.1 }} has booked a room from {{ name.2 }} till {{ name.3 }} on the {{ name.4 }} package </a>  
+                <br>
+            {% endfor %}
+        {% else %}
+            <h1> You didn't search </h1>
+        {% endif %}
+    </center>
+{% endblock %}

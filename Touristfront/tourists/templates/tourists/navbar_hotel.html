@@ -47,18 +47,36 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 {% if user.is_authenticated%}
+ 
 
                 <li class="nav-item">
-                    <a class="my_links nav-link" href="{% url 'Hoteladd_' %}"
-                        >Add Hotel</a
+                    <a class="my_links nav-link" href="{% url 'booking-list-Hotel' %}"
+                        > View bookings </a
                     >
                 </li>
 
                 <li class="nav-item">
-                    <a class="my_links nav-link" href="{% url 'update' %}"
-                        >Update Hotel</a
-                    >
+                <form
+                class="d-flex"
+                method="POST"
+                action="{% url 'b_search' %}"
+                role="search"
+            >
+                {% csrf_token %}
+
+                <input
+                    class="my_search form-control me-2"
+                    type="search"
+                    placeholder="Search Bookings"
+                    aria-label="Search"
+                    name="searched"
+                />
+                <button class="my_search_btn search_btn_gap btn btn-outline-secondary" type="submit">
+                    Search
+                </button>
+                </form>
                 </li>
+
 
                 <li class="nav-item">
                     <a class="my_links nav-link" href="{% url 'logout' %}">Logout</a>

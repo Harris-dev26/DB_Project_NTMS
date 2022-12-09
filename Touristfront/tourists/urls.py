@@ -17,12 +17,15 @@ urlpatterns = [
     path('/psearch',views.psearch, name = "psearch"),
     path('/update',views.update, name = "update"),
     path('POI',views.POI_list, name = "list-POI"),
+    path('/POI_V',views.POI_view, name = "add-list-POI"),
     path('Hotel',views.Hotel_list, name = "list-Hotel"),
     path('Hotel_add',views.Hotel_add_list, name = "add-list-Hotel"),
+    path('Booking_add',views.Booking_view, name = "booking-list-Hotel"),
     path('Hotel_comp',views.Hotel_comp, name = "comp-Hotel"),
     path('Plan',views.trip_, name = "Plan"),
     path('Plan_trip',views.trip_list, name = "list-trip"),
     path('Plan_trip',views.trip_search, name = "trip_search"),
+    path('book_search',views.bsearch, name = "b_search"),
     path('Book',views.Bookings_, name = "book"),
      
      

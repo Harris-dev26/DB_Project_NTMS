@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm
 from .forms import RegisterUserForm
+from django.db import connection
 
 def login_user(request):
     
@@ -36,9 +37,10 @@ def login_user(request):
 
 
 def logout_user(request):
-	logout(request)
-	messages.success(request, ("You Were Logged Out!"))
-	return redirect('home')
+    
+    logout(request)
+    messages.success(request, ("logged out!"))
+    return redirect('home')
 
 
 def register_user(request):
@@ -72,3 +74,6 @@ def register_user(request):
     return render(request, 'authentication/register_user.html', {
         'form':form,
     })
+
+
+ 

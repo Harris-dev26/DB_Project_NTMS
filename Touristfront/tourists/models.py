@@ -42,7 +42,7 @@ class Hotel_add(models.Model):
 
 
 class Hotel_rating(models.Model):
-    Local_Name =  models.CharField('Local Name', max_length= 120)
+    Name =  models.CharField('Name', max_length= 120)
     Rating =   models.IntegerField('Rating', max_length= 120)
     Review =   models.CharField('Review', max_length= 120)
     Choose_Hotel = models.ManyToManyField(Hotel_add, blank=True)
@@ -61,7 +61,7 @@ class POI_add(models.Model):
 
 
 class POI_rating(models.Model):
-    Local_Name =  models.CharField('Local Name', max_length= 120)
+    Name =  models.CharField('Name', max_length= 120)
     Rating =   models.IntegerField('Rating', max_length= 120)
     Review =   models.CharField('Review', max_length= 120)
     Choose_POI = models.ManyToManyField(POI_add, blank=True)
@@ -91,11 +91,13 @@ packages = [
 ]
 
 
+
+
 class bookings(models.Model):
     name =  models.CharField('Customer Name', max_length= 120)
     sdate = models.DateField('Start date')
     edate = models.DateField('End date')
-    Package =  models.CharField(max_length=120, choices= packages , default='')
+    Package =  models.CharField('Packages', max_length= 120)
     Choose_Hotel = models.ManyToManyField(Hotel_add, blank=True)
 
  

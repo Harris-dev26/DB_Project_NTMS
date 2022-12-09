@@ -71,11 +71,11 @@
         <strong class="heading_color">Trip by {{ POI.0 }}</strong>
         <ul class="trip_list">
             <li><strong> Trip is for : </strong> {{ POI.0}}</li>
-            <li><strong> First POI : </strong> {{ POI.1 }}</li>
-            <li><strong> Second POI : </strong> {{ POI.2 }}</li>
-            <li><strong> Third POI : </strong> {{ POI.3 }}</li>
-            <li><strong> First Hotel : </strong> {{ POI.4 }}</li>
-            <li><strong> Second Hotel : </strong> {{ POI.5 }}</li>
+            <li><strong> First POI : </strong> {{ POI.3 }}</li>
+            <li><strong> Second POI : </strong> {{ POI.4 }}</li>
+            <li><strong> Third POI : </strong> {{ POI.5 }}</li>
+            <li><strong> First Hotel : </strong> {{ POI.1 }}</li>
+            <li><strong> Second Hotel : </strong> {{ POI.2 }}</li>
             {% for locations in POI.Choose_Hotel.all %}
             <li><strong>Hotel : </strong>{{ locations.name }}</li>
             {% endfor %}

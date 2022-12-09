@@ -47,6 +47,21 @@ def POI_list(request):
 
     return render(request,'tourists/POI_list.html',{'POI_list':cursor})
 
+def POI_view(request):
+    cursor = connection.cursor()
+    query = f'Select POI_name,location from tourists_poi_add'
+    cursor.execute(query)
+
+    return render(request,'tourists/POI_add_list.html',{'POI_list':cursor})
+
+def Booking_view(request):
+
+    cursor = connection.cursor()
+    query = f'Select name,sdate,edate,Package from tourists_bookings'
+    cursor.execute(query)
+
+    return render(request,'tourists/booking_add_list.html',{'POI_list':cursor})
+
 def Hotel_comp(request):
     
     submitted = False 
@@ -122,6 +137,21 @@ def trip_search(request):
 
         return render(request,"tourists/trip_search.html",{})
 
+def bsearch(request):
+    if request.method == "POST":
+        searched = request.POST['searched']
+
+        cursor = connection.cursor()
+        cursor.execute("Select * FROM tourists_bookings WHERE name = (%s)",[searched])
+
+
+        return render(request,"tourists/bsearch.html",{ 'searched': searched ,
+        'result': cursor})
+
+    else:
+
+        return render(request,"tourists/bsearch.html",{})
+        
 def search(request):
     if request.method == "POST":
         searched = request.POST['searched']
@@ -404,6 +434,7 @@ def Bookings_(request):
             Name = form.cleaned_data.get("name")
             Rating = form.cleaned_data.get("sdate")
             Review = form.cleaned_data.get("edate")
+            pack = form.cleaned_data.get("Package")
             hotel = form.cleaned_data.get("Choose_Hotel")
 
         print(hotel[0])
@@ -412,7 +443,7 @@ def Bookings_(request):
         rating_id = 0
 
         cursor = connection.cursor()
-        cursor.execute("INSERT INTO tourists_bookings (name,sdate,edate) VALUES (%s,%s,%s)",[Name,Rating,Review])
+        cursor.execute("INSERT INTO tourists_bookings (name,sdate,edate,Package) VALUES (%s,%s,%s,%s)",[Name,Rating,Review,pack])
         cursor.execute("Select id FROM tourists_hotel_add WHERE name = (%s)",[hotel[0]])
 
         for i in cursor:

@@ -65,28 +65,7 @@
 
                 {% endif %}
             </ul>
-            <form
-                class="d-flex"
-                method="POST"
-                action="{% url 'search' %}"
-                role="search"
-            >
-                {% csrf_token %}
-
-                <input
-                    class="my_search form-control me-2"
-                    type="search"
-                    placeholder="Search Stuff"
-                    aria-label="Search"
-                    name="searched"
-                />
-                <button
-                    class="my_search_btn btn btn-outline-secondary"
-                    type="submit"
-                >
-                    Search
-                </button>
-            </form>
+             
         </div>
     </div>
 </nav>
