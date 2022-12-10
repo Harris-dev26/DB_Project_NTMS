@@ -85,17 +85,17 @@ WSGI_APPLICATION = 'touristfront.wsgi.application'
 #     }
 # }
 
+
 DATABASES = {
-    
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'tourist_front',
-        'USER': 'root',
-        'PASSWORD': 'qwertyuiop',
-        'HOST': 'localhost',
-        'PORT': '3306',
+
+    "default": {
+        
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME":  os.path.join(BASE_DIR, "db.sqlite3"),
+
     }
 }
+ 
 
 
 
