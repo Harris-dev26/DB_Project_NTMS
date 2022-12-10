@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-vt^sekpei#2eoy@$$htf=m0uun84=1@7%#7z*pt#$v$ou*!a^3
 DEBUG = True
 
 ALLOWED_HOSTS = ['dbgroup-28.herokuapp.com', '127.0.0.1']
-DEBUG = False
+ 
 
 # Application definition
 
