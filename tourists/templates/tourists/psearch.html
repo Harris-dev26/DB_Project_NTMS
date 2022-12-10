@@ -1,0 +1,18 @@
+{% extends 'tourists/base.html' %}
+
+{% block content %}
+
+    <center> 
+        {% if searched %}
+            <h1>You searched for {{ searched }}</h1>
+            <br>
+            {% for name in result %}
+                <a> POI: {{ name.1 }} at {{ name.2 }} </a>  
+                <br>
+            {% endfor %}
+        {% else %}
+            <h1> you didnt search </h1>
+        {% endif %}
+    </center>
+
+{% endblock %}

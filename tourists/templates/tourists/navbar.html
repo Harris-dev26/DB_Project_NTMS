@@ -1,0 +1,71 @@
+<style>
+    .my_navbar {
+        background-color: #439A97 !important;
+    }
+    .my_links {
+        color: white !important;
+    }
+    .my_search {
+        background-color: #CBEDD5;
+    }
+    .my_search:hover {
+        background-color: white;
+    }
+    .my_search_btn {
+        padding: 0.5em;
+        color: #439A97;
+        background-color: white;
+    }
+    .my_search_btn:hover {
+        background-color: #251749;
+        color: white;
+    }
+</style>
+
+<nav class="my_navbar navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+        <a class="my_links navbar-brand" href="{% url 'home' %}"
+            >Tourist website</a
+        >
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                {% if user.is_authenticated%}
+
+                <li class="nav-item">
+                    <a class="my_links nav-link" href="{% url 'logout' %}"
+                        >Logout</a
+                    >
+                </li>
+                {% else %}
+
+                <li class="nav-item">
+                    <a
+                        class="my_links nav-link"
+                        href="{% url 'register_user' %}"
+                        >Register</a
+                    >
+                </li>
+
+                <li class="nav-item">
+                    <a class="my_links nav-link" href="{% url 'login' %}"
+                        >Login</a
+                    >
+                </li>
+
+                {% endif %}
+            </ul>
+             
+        </div>
+    </div>
+</nav>

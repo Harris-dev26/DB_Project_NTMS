@@ -1,0 +1,61 @@
+{% extends 'tourists/base.html' %} {% block content %}
+
+<style>
+    .login_main_flex {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 1em;
+    }
+    .login_form {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 0.5em;
+        width: 50%;
+    }
+    .btn_main {
+        padding: 1em;
+        border-radius: 100vmax;
+        color: white;
+        background-color: #439A97;
+    }
+    .btn_main:hover {
+        color: #439A97;
+        background-color: white;
+    }
+</style>
+
+<div class="login_main_flex">
+    <h1>Login</h1>
+
+    <form class="login_form" action="" method="POST">
+        {% csrf_token %}
+
+        <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Enter entity type (Tourist,Local,Hotel)"
+            aria-label="Search"
+            name="searched"
+        />
+
+            <label for="exampleInputEmail1" class="form-label">Username</label>
+            <input
+                type="text"
+                class="form-control"
+                name="username"
+                aria-describedby="emailHelp"
+                placeholder="Enter your name"
+            />
+            <label for="exampleInputPassword1" class="form-label"
+                >Password</label
+            >
+            <input type="password" class="form-control" name="password" placeholder="Enter your password" />
+
+        <input type="submit" value="Submit" class="btn_main" />
+    </form>
+</div>
+{% endblock %}

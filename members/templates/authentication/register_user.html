@@ -1,0 +1,57 @@
+{% extends 'tourists/base.html' %}
+
+{% block content %}
+
+
+{% if form.errors %}
+
+
+<p>There was an error with your form... </p>
+
+
+{% endif %}
+
+<style>
+	.register_main_flex{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		gap: 1em;
+	}
+	.register_form
+	{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		gap: 0.5em;
+	}
+	.btn_main {
+        padding: 1em;
+        border-radius: 100vmax;
+        color: white;
+        background-color: #439A97;
+    }
+    .btn_main:hover {
+        color: #439A97;
+        background-color: white;
+    }
+</style>
+
+
+<div class="register_main_flex">
+	<h1>Register</h1>
+	<br>
+	<form class="register_form" action="{% url 'register_user' %}" method=POST>
+		{% csrf_token %}
+		<label for="searched">Enter Your Position:</label>
+		<input class="form-control me-2" type="search" placeholder="Enter entity type (Tourist,Local,Hotel)"
+			aria-label="Search" name="searched">
+		<br>
+		{{ form }}
+		<input type="submit" value="Submit" class="btn_main">
+	</form>
+	<br>
+</div>
+{% endblock %}
