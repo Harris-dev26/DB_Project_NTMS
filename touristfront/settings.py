@@ -26,8 +26,8 @@ SECRET_KEY = 'django-insecure-vt^sekpei#2eoy@$$htf=m0uun84=1@7%#7z*pt#$v$ou*!a^3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['dbgroup-28.herokuapp.com', '127.0.0.1']
- 
+ALLOWED_HOSTS = ['nationaltourismapp.pythonanywhere.com ','127.0.0.1']
+
 
 # Application definition
 
@@ -46,7 +46,6 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -86,20 +85,17 @@ WSGI_APPLICATION = 'touristfront.wsgi.application'
 #     }
 # }
 
-
-
 DATABASES = {
     
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'tourist_front',
-        'USER': 'root',
-        'PASSWORD': 'qwertyuiop',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'NAME': 'nationaltourisma$tourist_front',
+        'USER': 'nationaltourisma',
+        'PASSWORD': 'admin123!',
+        'HOST': 'nationaltourismapp.mysql.pythonanywhere-services.com',
+        'PORT': '5489',
     }
 }
-
 
 
 
