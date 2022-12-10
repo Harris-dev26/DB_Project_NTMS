@@ -86,19 +86,15 @@ WSGI_APPLICATION = 'touristfront.wsgi.application'
 #     }
 # }
 
-
 DATABASES = {
-    
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'heroku_b8ba1efa13843cb',
-        'USER': 'b18d753f0accde',
-        'PASSWORD': '201cb08b',
-        'HOST': 'us-cdbr-east-06.cleardb.net',
-        'PORT': '3306',
-    }
+
+    "default": {
+        
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME":  os.path.join(BASE_DIR, "db.sqlite3"),
+    }
 }
- 
+
 
 
 
