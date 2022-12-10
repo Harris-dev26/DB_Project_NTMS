@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-vt^sekpei#2eoy@$$htf=m0uun84=1@7%#7z*pt#$v$ou*!a^3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['HarisAsghar909.pythonanywhere.com']
+ALLOWED_HOSTS = ['taleef.pythonanywhere.com']
 
 
 # Application definition
@@ -89,10 +89,10 @@ DATABASES = {
     
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'HarisAsghar909$tourist_front',
-        'USER': 'HarisAsghar909',
+        'NAME': 'taleef$tourist_front',
+        'USER': 'taleef',
         'PASSWORD': 'admin123!',
-        'HOST': 'HarisAsghar909.mysql.pythonanywhere-services.com',
+        'HOST': 'taleef.mysql.pythonanywhere-services.com',
         'PORT': '3306',
     }
 }
