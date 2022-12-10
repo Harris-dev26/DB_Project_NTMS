@@ -26,9 +26,8 @@ SECRET_KEY = 'django-insecure-vt^sekpei#2eoy@$$htf=m0uun84=1@7%#7z*pt#$v$ou*!a^3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['nationaltourismapp.pythonanywhere.com ','127.0.0.1']
-
-
+ALLOWED_HOSTS = ['dbgroup-28.herokuapp.com', '127.0.0.1']
+ 
 # Application definition
 
 INSTALLED_APPS = [
@@ -84,16 +83,17 @@ WSGI_APPLICATION = 'touristfront.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+ 
 
 DATABASES = {
     
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'nationaltourisma$tourist_front',
-        'USER': 'nationaltourisma',
-        'PASSWORD': 'admin123!',
-        'HOST': 'nationaltourismapp.mysql.pythonanywhere-services.com',
-        'PORT': '5489',
+        'NAME': 'tourist_front',
+        'USER': 'root',
+        'PASSWORD': 'admin',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 
@@ -145,4 +145,3 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
- 
