@@ -13,3 +13,4 @@ admin.site.register(Locals)
 admin.site.register(POI_add)
 admin.site.register(POI_rating)
 
+#hello
